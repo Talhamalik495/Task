@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer utilities {
+  .border-gradient {
+    position: relative;
+    border-radius: 8px;
+    padding: 3px; /* Adjust border thickness here */
+    background: linear-gradient(to top,  #388FCB, #7CC140); /* Gradient color */
+  }
+
+  /* Inner content to cover background */
+  .border-gradient > .content {
+    background: white; /* Inner background */
+    border-radius: 6px; /* Adjust based on padding */
+    width: 100%; 
+    height: 100%;
+    position: relative;
+    z-index: 1; /* Ensure inner content stays on top */
+  }
+
+  /* Ensure the gradient is only visible on border */
+  .border-gradient::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit; /* Same gradient as parent */
+    border-radius: inherit;
+    padding: 2px; /* Inner margin for border effect */
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, 
+                  linear-gradient(#fff 0 0); /* Mask inner background */
+    mask: linear-gradient(#fff 0 0) content-box, 
+          linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    z-index: 0; /* Keep it behind the content */
+  }
+}
+
+
+
+
+
+
+.gradient-text {
+  background: linear-gradient(90deg, #4facfe, #00f2fe); /* Gradient colors */
+  -webkit-background-clip: text; /* Background clip for text */
+  -webkit-text-fill-color: transparent; /* Make text color transparent */
+  font-size: 48px; /* Text size */
+  font-weight: bold; /* Text weight */
+}
+@media screen and (max-width: 1100px){
+  .hide{
+    display: none;
+  }
+  .setline{
+    position: absolute; 
+    top: 670px;
+    
+  }
+}
+@media screen and (max-width: 1075px){
+  .card{
+    display: flex;
+    flex-direction: column;
+  }
+  .cardset{
+    width: 100%;
+  }
+}
+@media screen and (max-width: 900px){
+.hero{
+  padding-top: 10px;
+}
+.setline{
+  top:600px ;
+}
+}
+@media screen and (max-width: 800px){
+.text-set-header{
+ font-size: 15px;
+}
+.herotext{
+  font-size: 44px;
+}
+}
+@media screen and (max-width: 670px){
+  .input{
+    display: flex;
+    flex-direction: column;
+  }
+  .left{
+   width: 100%;
+    flex-direction: column;
+  }
+  .setline{
+    top:680px ;
+  }
+  .setmokup{
+    margin-top: 150px;
+    margin-bottom: 50px;
+
+  }
+  .cardset{
+    display: flex;
+    flex-direction: column;
+  }
+  .logonone{
+    display: none;
+  }
+
+}
+@media screen and (max-width: 600px){
+.text-set-header{
+  font-size: 12px;
+}
+}
+@media screen and (max-width:530px){
+  .setline{
+    position: absolute; 
+    top: 810px;
+  }
+  .setmokup{
+    margin-top: 150px;
+    margin-bottom: 100px;
+
+  }
+ 
+  .setline{
+    top:680px ;
+  }
+  .text-set-header{
+    font-size: 10px;
+    display: flex;
+    gap: 5px;
+  }
+}
+@media screen and (max-width:480px){
+  .setline{
+    top:760px ;
+  }
+  .setlink{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+  }
+}
+@media screen and (max-width:430px){
+  .setmokup{
+    margin-top: 200px;
+    margin-bottom: 80px;
+
+  }
+  .setline{
+    top:800px ;
+  }
+}
+@media screen and (max-width:400px){
+  .setline{
+    top:850px ;
+  }
+}
+
