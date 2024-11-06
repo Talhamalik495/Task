@@ -140,7 +140,7 @@
 }
 @media screen and (max-width:480px){
   .setline{
-    top:760px ;
+    top:760p;
   }
   .setlink{
     display: flex;
